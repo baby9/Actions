@@ -7,15 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-it:
-
+  run:
     runs-on: ubuntu-latest
     env:
       HUB: ${{ secrets.HUB }}
       TOKEN: ${{ secrets.TOKEN }}
       TERMPASS: ${{ secrets.TERMPASS }}
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Apps Run
       run: |
          cd alpha
